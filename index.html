@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,341 @@
 
     <title>Skiing - Home</title>
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3163/3163769.png">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h1 onClick="myfunc()">Heading</h1>
+    <!-- <h1 onClick="myfunc()">Heading</h1> -->
+    <header role="banner">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Skiing</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Snow Reports</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Trip Planning</a>
+                            <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
+                                <a class="dropdown-item" href="#">Food Catering</a>
+                                <a class="dropdown-item" href="#">Drink &amp; Beverages</a>
+                                <a class="dropdown-item" href="#">Wedding &amp; Birthday</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Magazine</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </li>
+                    </ul>
+
+                    <!-- <ul class="navbar-nav ml-auto">
+                        <li class="nav-item cta-btn">
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                    </ul> -->
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- END header -->
+
+
+    <div class="hero" style="background-image: url('images/hero_1.jpg');">
+        <div class="hero-container">
+            <h1>Want to go skiing?</h1>
+            <h5 class="mt-2">Everything you need for an extraordinary ski season is right here at Skiing.</h5>
+            <div class="input-group mt-4">
+                <input type="search" class="form-control rounded" placeholder="Search for skiing" aria-label="Search"
+                    aria-describedby="search-addon" />
+                <button type="button" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <h1 class="mt-4">Popular Search</h1>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <button type="button" id="grid-btn-1">Epic Pass</button>
+                </div>
+                <div class="grid-item">
+                    <button type="button" id="grid-btn-2">Ikon Pass</button>
+                </div>
+                <div class="grid-item">
+                    <button type="button" id="grid-btn-3">Colorado</button>
+                </div>
+                <div class="grid-item">
+                    <button type="button" id="grid-btn-4">California</button>
+                </div>
+                <div class="grid-item">
+                    <button type="button" id="grid-btn-5">Utah</button>
+                </div>
+                <div class="grid-item">
+                    <button type="button" id="grid-btn-6">Vermont</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="img-header">
+        </div>
+    </div>
+    <section class="main-content">
+        <h1>Latest News</h1>
+        <div class="content-up">
+            <div class="card">
+                <div class="card-item">
+                    <a href="#"><img src="/images/card-img-1.jpg" alt="">
+                        <h2>What's new for the 2022-2023 ski season</h2>
+                        <p>A new ski season is quickly approaching, and you will happily discover lots of new
+                            enhancements at many of your favorite ski resorts, plus changes to ski passes and more.
+                            Below is a ski run across the country with some highlights in each region of what’s new at
+                            ski resorts around the U.S. However, first things first, find out what’s new with the major
+                            ski passes.</p>
+                    </a>
+                </div>
+                <div class="card-item">
+                    <a href="#"><img src="/images/card-img-2.jpg" alt="">
+                        <h2>Here comes La Niña: This winter may pack big snows</h2>
+                        <p>It’s time to talk about the weather and those twin weather-makers that make a difference in
+                            whether we’ll get more or less snow to slide on in different parts of the country. Their
+                            names are, of course, El Niño (little boy) and La Niña (little girl). They may be twins in
+                            one sense, but they have distinctively different personalities and are actually opposite
+                            climate patterns. Early predictions for the winter of 22-23 are that winter, and La Nina, is
+                            right around the corner.</p>
+                    </a>
+                </div>
+                <div class="card-item">
+                    <a href="#"><img src="/images/card-img-3.jpg" alt="">
+                        <h2>Cheap thrills: Best ways to find discounted lift tickets</h2>
+                        <p>Walking up to a ski resort ticket window to buy a lift ticket can often come with what we’ll
+                            call “window shock.” Lift ticket prices at ski resort ticket windows are more daunting than
+                            ever. However, we want to share some ways that you can get around that and find discounted
+                            lift tickets.
+
+                            At a number of ski resorts, particularly around a peak time, you could be paying $250 for a
+                            lift ticket. Ski for the weekend and you’re looking at $500 just for two days. So, how do
+                            you really save money? The single best way is to purchase one of the major ski passes –
+                            IKON, Epic, Mountain Cooperative or Indy. However, that implies you plan to ski more than a
+                            few days each season and want to try several resorts, near or far way. Still, you will save
+                            considerable dollars with a pass.</p>
+                    </a>
+                </div>
+                <div class="card-item">
+                    <a href="#"><img src="/images/card-img-4.jpg" alt="">
+                        <h2>US: Winter 22/23 Long-Range Weather Forecast</h2>
+                        <p>Shorter days, cooler nights, and changing colors means fall is here. And with the fall
+                            season, means ski season isn’t far away. We’re looking forward to the 22/23 winter ski
+                            season now more than ever. We sat down with meteorologist Chris Tomer to get a pulse on what
+                            we can expect this season.
+                            ➽ What is the long-range winter 2022/2023 forecast?
+                            There are numerous global factors that influence how much snow could fall across the United
+                            States each winter season. Of all the factors, I like to analyze the water temperatures in
+                            the South Pacific near the Equator. Water temperatures in this geographic area tend to
+                            affect the wintertime jet stream position in the United States. Keep in mind this is a
+                            forecast.
+                        </p>
+                    </a>
+                </div>
+                <div class="card-item">
+                    <a href="#"><img src="/images/card-img-5.jpg" alt="">
+                        <h2>2022/23 Buyer’s Guide: Mountain Collective Pass</h2>
+                        <p>The Mountain Collective is, well collectively, a group of 25 U.S. and international ski
+                            resorts that make up an “A” list of 24 destinations you’ll want to ski or ride — some with
+                            several resorts in one general area. This is a less expensive than the Epic or IKON passes,
+                            but still very enticing.
+
+                            The pass offers you two days at each of its destinations and 50 percent off on more tickets
+                            at those resorts based on that day’s ticket window price. There are none of those pesky
+                            blackout dates either. It’s simple in nature and not near as confusing or layered as the Big
+                            Two passes.
+
+                            The Mountain Collective came about as an alternative to the original Epic Pass from Vail
+                            Resorts before Vail went on a buying spree. It remains one of the most attractive passes and
+                            one of the easiest to understand and use. If the math works out for how often and where you
+                            plan to ski and ride, this could be your magic carpet to winter fun.
+
+                            Side note: The Mountain Collective and IKON pass share some ownership and that’s why, for
+                            example, resorts like Aspen Snowmass and several others are involved in both passes with
+                            different offerings.
+
+                            One difference you will notice if you have used Mountain Collective passes in the past is
+                            that Sugarbush, Vt., Mammoth Mountain and Palisades Tahoe (formerly Squaw Valley & Alpine
+                            Meadows) in California are no longer included, but there some significant recent additions
+                            such as Le Massif de Charlevoix and Marmot Basin in Canada, Sun Valley, Idaho, Sugar Bowl,
+                            California and Snowbasin, Utah.</p>
+                    </a>
+                </div>
+                <div class="card-item">
+                    <a href="#"><img src="/images/card-img-6.jpg" alt="">
+                        <h2>The best fall hikes in ski towns</h2>
+                        <p>The calendar may read “summer,” but the shorter days and cooler nights is whetting our
+                            appetite for fall. And with fall, comes the beautiful fall foliage season, marking that the
+                            winter ski season is right around the corner. Recently, we shared some of the best
+                            destinations and ski resorts for fall foliage. We’re coming to you now with some of the best
+                            ski destinations for fall hiking.
+
+                            Experiencing the peak fall foliage season is all about timing and it’s different in every
+                            destination. In Jackson Hole, you can be treated to beautiful fall colors by early
+                            September, while other destinations won’t have traces of fall until late September or
+                            October. While there’s nothing quite like a scenic fall foliage drive, fall hikes at ski
+                            resorts offer viewpoints you just aren’t going to get from your car.
+
+                            Below, see our list for some of the best ski destinations for fall hiking.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <a href="#"><button>Load More</button></a>
+        </div>
+        <div class="content-down">
+            <div class="header">
+                <div class="logo__header__down">
+                    <img src="https://www.onthesnow.com/assets/resort/visitors-choice-en-US.svg" alt="">
+                </div>
+                <h2>Top Rated Ski Resorts</h2>
+            </div>
+        </div>
+        <div class="img-footer">
+        </div>
+    </section>
+
+    <footer class="bg-secondary text-center text-lg-start text-white">
+        <div class="container p-4">
+            <div class="row my-1">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
+                        style="width: 150px; height: 150px;">
+                        <img src="https://st2.depositphotos.com/3687485/9544/v/950/depositphotos_95445528-stock-illustration-ski-resort-logo-emblems-labels.jpg"
+                            height="100" alt="" loading="lazy" />
+                    </div>
+
+                    <p class="text-center">Join Skiing to get Ski magazine, access to exclusive content, thousands of
+                        training plans, and more.</p>
+
+                    <ul class="list-unstyled d-flex flex-row justify-content-center">
+                        <li>
+                            <a class="text-white px-2" href="#!">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-white px-2" href="#!">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-white ps-2" href="#!">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Training Plans</h5>
+
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Telluride</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Aspen Snowmass</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Deer Vally
+                                Resort</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Jackson Hole</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Lake Louise</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> More</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">About Us</h5>
+
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Job</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Tenders</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> General
+                                information</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> About the
+                                shelter</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Statistic data</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Contact</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p><i class="fas fa-map-marker-alt pe-2"></i> Warsaw, 57 Street, Poland</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-phone pe-2"></i> + 01 234 567 89</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-envelope pe-2 mb-0"></i> contact@example.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 <!-- Toastr noti -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>  
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 
-<script type="text/javascript" src="./index.js"></script>
+<!-- Mouse effect -->
+<script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+
+<script type="text/javascript" src="./js/index.js"></script>
 
 </html>
