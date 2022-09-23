@@ -188,7 +188,7 @@ header .navbar .cta-btn a:hover {
 }
 
 .hero {
-  filter: brightness(100%);
+  position: relative;
   height: 90vh;
   width: 100%;
   background-size: cover;
@@ -196,6 +196,7 @@ header .navbar .cta-btn a:hover {
   background-repeat: no-repeat;
 }
 .hero .hero-container {
+  z-index: 3;
   position: relative;
   width: 60%;
   top: 50%;
@@ -216,6 +217,15 @@ header .navbar .cta-btn a:hover {
   margin: 0;
 }
 
+.hero .img-header {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  background: url("../images/white-mountains.svg") 50% 101% repeat-x;
+}
+
 .grid-container {
   width: 100%;
   display: grid;
@@ -227,7 +237,7 @@ header .navbar .cta-btn a:hover {
   place-items: center;
   margin: 0.25px;
 }
-.grid-container .grid-item button {
+.grid-container .grid-item .grid-btn {
   display: block;
   width: 100%;
   border: none;
@@ -238,7 +248,7 @@ header .navbar .cta-btn a:hover {
   text-align: center;
   /* border: 0.1px solid #8cd9f2; */
 }
-.grid-container .grid-item button:hover {
+.grid-container .grid-item .grid-btn:hover {
   background-color: #fff;
   text-decoration: underline;
   font-weight: bold;
@@ -293,7 +303,6 @@ header .navbar .cta-btn a:hover {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", Helvetica, sans-serif;
 }
 .main-content {
   display: flex;
@@ -368,17 +377,16 @@ header .navbar .cta-btn a:hover {
   text-align: center;
   margin-top: 2rem;
 }
-.main-content button {
-  color: #f8f9fa;
+.main-content .btn-load {
+  color: #fff;
   background-color: #006fac;
-  border: none;
-  width: 100px;
-  height: 50px;
-  border-radius: 8px;
-  font-weight: 700;
+  padding: 5px 10px;
+  /* border-radius: 8px;
+  font-weight: 700; */
 }
 
-.main-content .btn button:hover {
+.main-content .btn-load:hover {
+  background-color: #006fac;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -479,4 +487,42 @@ header .navbar .cta-btn a:hover {
   .main-content .logo__header__down img:hover {
     transform: translateY(-20px) rotateY(360deg);
   }
+}
+
+/* =============== SNOW REPORT ============================= */
+.snowreport-section .hero {
+  height: 30vh;
+  background-position: 100% 25%;
+}
+.snowreport-section #list-weather {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.snowreport-section .card {
+  display:none;
+  width: 33.333333333%;
+  color: #4b515d;
+  border-radius: 35px;
+}
+@media screen and (max-width: 768px) {
+  .snowreport-section .card {
+    width: 100%;
+  }
+}
+.snowreport-section .card .small,
+.snowreport-section .card .fas {
+  color: #868b94;
+  text-transform: capitalize;
+}
+
+.snowreport-section .card h6 {
+  color: #1c2331;
+}
+
+.snowreport-section .card-body {
+  margin: 5px;
+  box-shadow: 1px 1px 7px 1px #888888;
+  border-radius: 8px;
+  overflow: hidden;
 }
