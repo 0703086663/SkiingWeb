@@ -149,3 +149,8 @@ function initMap() {
     skiingPath.setMap(map);
   });
 }
+
+// ========================= Amination search ==============================
+function aminationSearch() {
+  $("#search-container").addClass("animation-search");
+}

@@ -42,18 +42,22 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Trip Planning</a>
+                                aria-haspopup="true" aria-expanded="false">Trip Plannings</a>
                             <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                <a class="dropdown-item" href="#">Food Catering</a>
-                                <a class="dropdown-item" href="#">Drink &amp; Beverages</a>
-                                <a class="dropdown-item" href="#">Wedding &amp; Birthday</a>
+                                <a class="dropdown-item" href="#">Tech & Gear</a>
+                                <a class="dropdown-item" href="#">Safety & Insurance</a>
+                                <a class="dropdown-item" href="#">Air Travel</a>
+                                <a class="dropdown-item" href="#">Cruises</a>
+                                <a class="dropdown-item" href="#">Budget Travel</a>
+                                <a class="dropdown-item" href="#">Car Rentals</a>
+                                <a class="dropdown-item" href="#">Miles & Points</a>
                             </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="journey.html">Journey</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                            <a class="nav-link" href="#!" onClick="aminationSearch()"><i class="fa-solid fa-magnifying-glass"></i></a>
                         </li>
                     </ul>
 
@@ -74,9 +78,17 @@
         <div class="hero-container">
             <h1>Want to go skiing?</h1>
             <h5 class="mt-2">Everything you need for an extraordinary ski season is right here at Skiing.</h5>
-            <div class="input-group mt-4">
+            <div class="input-group mt-4" id="search-container">
                 <input type="search" class="form-control rounded" placeholder="Search for skiing" aria-label="Search"
-                    aria-describedby="search-addon" />
+                    aria-describedby="search-addon" list="browsers-search" />
+                <datalist id="browsers-search">
+                    <option value="Epic Pass">
+                    <option value="Ikon Pass">
+                    <option value="Colorado">
+                    <option value="California">
+                    <option value="Utah">
+                    <option value="Vermont">
+                </datalist>
                 <button type="button" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <h1 class="mt-4">Popular Search</h1>
