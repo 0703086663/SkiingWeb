@@ -48,6 +48,7 @@ function calculateTemperature(temp) {
 }
 function getWeatherData() {
   $("#loading-gif").show();
+  $("#btn-load-more").hide();
   navigator.geolocation.getCurrentPosition(
     (position) => {
       $.get(
@@ -71,7 +72,7 @@ function getWeatherData() {
                 list[i].weather[0].description +
                 '</span></div><div class="d-flex align-items-center"><div class="flex-grow-1" style="font-size: 1rem;"><div><i class="fas fa-cloud"></i> <span class="ms-1"> ' +
                 list[i].clouds.all +
-                ' N/m3</span></div><div><i class="fas fa-wind"></i> <span class="ms-1"> ' +
+                ' N/m<span class="equation-badge">3</span></span></div><div><i class="fas fa-wind"></i> <span class="ms-1"> ' +
                 list[i].wind.speed +
                 ' km/h</span></div><div><i class="fas fa-tint"></i> <span class="ms-1">' +
                 list[i].main.humidity +
@@ -80,7 +81,9 @@ function getWeatherData() {
                 '@2x.png"width="100px"></div></div></div></div>'
             );
           }
+          $(".main-content-title").html("Snow Report in " + data.city.name);
           $("#loading-gif").remove();
+          $("#btn-load-more").show();
           $(".snowreport-section .card:lt(6)").show();
         }
       );
@@ -103,5 +106,46 @@ function loadMore() {
   currentIndex = currentIndex + 6 <= arrLength ? currentIndex + 6 : arrLength;
   $(".snowreport-section .card:lt(" + currentIndex + ")").show();
   console.log(currentIndex);
-  if(currentIndex >= 39) $('#btn-load-more').remove()
+  if (currentIndex >= 39) $("#btn-load-more").remove();
+}
+
+// ============= Journey =================
+const planCoordinates = [];
+
+// Push the first current location
+navigator.geolocation.getCurrentPosition((position) => {
+  planCoordinates.push({
+    lat: position.coords.latitude,
+    lng: position.coords.longitude,
+  });
+});
+
+// Push the current location each minute
+setInterval(function () {
+  navigator.geolocation.getCurrentPosition((position) => {
+    planCoordinates.push({
+      lat: position.coords.latitude,
+      lng: position.coords.longitude,
+    });
+  });
+  initMap();
+}, 10000);
+
+// Initial map
+function initMap() {
+  navigator.geolocation.getCurrentPosition((position) => {
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 13,
+      center: { lat: position.coords.latitude, lng: position.coords.longitude },
+      mapTypeId: "terrain",
+    });
+    const skiingPath = new google.maps.Polyline({
+      path: planCoordinates,
+      geodesic: true,
+      strokeColor: "#FF0000",
+      strokeOpacity: 1.0,
+      strokeWeight: 1,
+    });
+    skiingPath.setMap(map);
+  });
 }

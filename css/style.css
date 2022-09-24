@@ -500,7 +500,7 @@ header .navbar .cta-btn a:hover {
   flex-wrap: wrap;
 }
 .snowreport-section .card {
-  display:none;
+  display: none;
   width: 33.333333333%;
   color: #4b515d;
   border-radius: 35px;
@@ -508,6 +508,11 @@ header .navbar .cta-btn a:hover {
 @media screen and (max-width: 768px) {
   .snowreport-section .card {
     width: 100%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .snowreport-section .card {
+    width: 50%;
   }
 }
 .snowreport-section .card .small,
@@ -525,4 +530,17 @@ header .navbar .cta-btn a:hover {
   box-shadow: 1px 1px 7px 1px #888888;
   border-radius: 8px;
   overflow: hidden;
+}
+
+.snowreport-section .equation-badge {
+  position: absolute;
+  top: 66%;
+  font-size: 12px;
+}
+
+.snowreport-section #loading-gif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
 }
