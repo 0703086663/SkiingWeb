@@ -397,7 +397,7 @@ header .navbar .cta-btn a:hover {
 }
 .main-content .content-down .header {
   width: 100%;
-  height: 70px;
+  height: fit-content;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -471,7 +471,7 @@ header .navbar .cta-btn a:hover {
   }
   .main-content .content-down .header {
     flex-direction: column;
-    height: 100px;
+    height: fit-content;
     justify-content: space-around;
   }
   .main-content .content-down .header h2 {
@@ -505,14 +505,14 @@ header .navbar .cta-btn a:hover {
   color: #4b515d;
   border-radius: 35px;
 }
-@media screen and (max-width: 768px) {
-  .snowreport-section .card {
-    width: 100%;
-  }
-}
 @media screen and (max-width: 1000px) {
   .snowreport-section .card {
     width: 50%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .snowreport-section .card {
+    width: 100%;
   }
 }
 .snowreport-section .card .small,
@@ -543,30 +543,60 @@ header .navbar .cta-btn a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 50%;
+  left: 50%;
   z-index: 100;
 }
 input::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
 
-.animation-search{
-  -webkit-animation: ring .5s .7s ease-in-out;
+.animation-search {
+  -webkit-animation: ring 0.5s 0.7s ease-in-out;
   -webkit-transform-origin: 50% 4px;
-  animation: ring .5s .7s ease-in-out;
+  animation: ring 0.5s 0.7s ease-in-out;
   transform-origin: 50% 4px;
 }
 
-
 @keyframes ring {
-  0% { transform: rotate(0); }
-  10% { transform: rotate(5deg); }
-  20% { transform: rotate(-5deg); }
-  30% { transform: rotate(5deg); }
-  40% { transform: rotate(-5deg); }
-  50% { transform: rotate(5deg); }
-  60% { transform: rotate(-5deg); }
-  70% { transform: rotate(5deg); }
-  80% { transform: rotate(-5deg); }
-  90% { transform: rotate(5deg); }
-  100% { transform: rotate(0); }
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(5deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  90% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.snowreport-section .flex-date {
+  text-align: right;
+}
+.snowreport-section .main-content-title {
+  text-align: center;
 }

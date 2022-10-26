@@ -64,7 +64,7 @@ function getWeatherData() {
             $("#list-weather").append(
               '<div class="card"><div class="card-body p-4"><div class="d-flex"><h6 class="flex-grow-1">' +
                 data.city.name +
-                "</h6><h6>" +
+                '</h6><h6 class="flex-date">' +
                 data.list[i].dt_txt +
                 '</h6></div><div class="d-flex flex-column text-center mt-5 mb-4"><h6 class="display-4 mb-0 font-weight-bold">' +
                 calculateTemperature(list[i].main.temp) +
@@ -111,6 +111,12 @@ function loadMore() {
 
 // ============= Journey =================
 const planCoordinates = [];
+// const planCoordinates = [
+//   { lat: 37.772, lng: -122.214 },
+//   { lat: 21.291, lng: -157.821 },
+//   { lat: -18.142, lng: 178.431 },
+//   { lat: -27.467, lng: 153.027 },
+// ]; // Example
 
 // Push the first current location
 navigator.geolocation.getCurrentPosition((position) => {
@@ -144,7 +150,7 @@ function initMap() {
       geodesic: true,
       strokeColor: "#FF0000",
       strokeOpacity: 1.0,
-      strokeWeight: 1,
+      strokeWeight: 4,
     });
     skiingPath.setMap(map);
   });
