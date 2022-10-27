@@ -494,7 +494,7 @@ header .navbar .cta-btn a:hover {
   height: 30vh;
   background-position: 100% 25%;
 }
-.snowreport-section #list-weather {
+.snowreport-section #list-weather, #list-history {
   width: 80%;
   display: flex;
   flex-wrap: wrap;

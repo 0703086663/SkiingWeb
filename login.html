@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Journey</title>
+    <title>Skiing - Login</title>
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3163/3163769.png">
 
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
@@ -17,14 +17,12 @@
     <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <!-- Google polyline -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="snowreport-section">
+<body>
     <header role="banner">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container">
@@ -56,48 +54,90 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="journey.html">Journey</a>
+                            <a class="nav-link" href="trackandview.html">Track and View</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                            <a class="nav-link" href="login.html">Login</a>
                         </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#!" onClick="aminationSearch()"><i
+                                    class="fa-solid fa-magnifying-glass"></i></a>
+                        </li> -->
                     </ul>
-
-                    <!-- <ul class="navbar-nav ml-auto">
-                        <li class="nav-item cta-btn">
-                            <a class="nav-link" href="#">Contact Us</a>
-                        </li>
-                    </ul> -->
-
                 </div>
             </div>
         </nav>
     </header>
     <!-- END header -->
 
+
     <div class="hero" style="background-image: url('images/hero_1.jpg');">
-        <div class="img-header"></div>
-    </div>
+        <div class="hero-container" style="width: 50%; text-align: left;
+        background: hsla(0, 0%, 100%, 0.35);
+        backdrop-filter: blur(30px);
+        ">
+            <div class="container">
+                <div class="g-0 align-items-center">
+                    <div class="mb-1 mb-lg-0">
+                        <div class="card-body p-1 shadow-5">
+                            <h2 class="fw-bold mb-3 text-center text-dark">Sign in now</h2>
+                            <form>
 
-    <section class="main-content">
-        <div class="content-down px-1">
-            <div class="header">
-                <div class="logo__header__down">
-                    <img src="https://www.onthesnow.com/assets/resort/visitors-choice-en-US.svg" alt="">
+                                <!-- Email input -->
+                                <div class="form-outline mb-3">
+                                    <label class="form-label text-dark" for="email">Email address</label>
+                                    <input type="email" id="email" class="form-control" required />
+                                </div>
+
+                                <!-- Password input -->
+                                <div class="form-outline mb-3">
+                                    <label class="form-label text-dark" for="password">Password</label>
+                                    <input type="password" id="password" class="form-control" required />
+                                </div>
+
+                                <!-- Checkbox -->
+                                <div class="form-check d-flex mb-3">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33"
+                                        checked />
+                                    <label class="form-check-label text-dark" for="form2Example33">
+                                        Subscribe to our newsletter
+                                    </label>
+                                </div>
+
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-primary btn-block mb-3" onclick="checkLogin()">
+                                    Log in
+                                </button>
+
+
+                                <!-- Register buttons -->
+                                <div class="text-center">
+                                    <p>or sign up if not have account with:</p>
+                                    <button type="button" class="btn btn-link btn-floating mx-1">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </button>
+
+                                    <button type="button" class="btn btn-link btn-floating mx-1">
+                                        <i class="fab fa-google"></i>
+                                    </button>
+
+                                    <button type="button" class="btn btn-link btn-floating mx-1">
+                                        <i class="fab fa-twitter"></i>
+                                    </button>
+
+                                    <button type="button" class="btn btn-link btn-floating mx-1">
+                                        <i class="fab fa-github"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <h2>Journey</h2>
             </div>
         </div>
-        <br>
-        <div class="d-flex justify-content-center" id="loading-gif">
-            <div class="spinner-border" style="width: 5rem; height: 5rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+        <div class="img-header">
         </div>
-        <div id="map" style="width:80%; height: 80vh"></div>
-        <div class="img-footer"></div>
-    </section>
-
+    </div>
 
     <footer class="bg-secondary text-center text-lg-start text-white">
         <div class="container p-4">
@@ -202,20 +242,20 @@
         </div>
     </footer>
 </body>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <!-- Toastr noti -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+
 <!-- Mouse effect -->
 <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
-<!-- Google polyline -->
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx0BLLb64KGVX2Einy0LTPKW_4wc2VHOk&callback=initMap&v=weekly"
-    defer></script>
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.sticky.js"></script>
+
 
 <script type="text/javascript" src="./js/index.js"></script>
 

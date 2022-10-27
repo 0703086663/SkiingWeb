@@ -160,3 +160,11 @@ function initMap() {
 function aminationSearch() {
   $("#search-container").addClass("animation-search");
 }
+
+function checkLogin() {
+  if ($("#email").val() == "" || $("#password").val() == "") {
+    toastr.error("You need to input information !!!");
+  } else {
+    toastr.success("Login successful");
+  }
+}

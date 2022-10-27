@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track and View</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3163/3163769.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- Google polyline -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="snowreport-section">
+    <header role="banner">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Skiing</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="snowreport.html">Snow Reports</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Trip Plannings</a>
+                            <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
+                                <a class="dropdown-item" href="#">Tech & Gear</a>
+                                <a class="dropdown-item" href="#">Safety & Insurance</a>
+                                <a class="dropdown-item" href="#">Air Travel</a>
+                                <a class="dropdown-item" href="#">Cruises</a>
+                                <a class="dropdown-item" href="#">Budget Travel</a>
+                                <a class="dropdown-item" href="#">Car Rentals</a>
+                                <a class="dropdown-item" href="#">Miles & Points</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="trackandview.html">Track and View</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- END header -->
+
+    <div class="hero" style="background-image: url('images/hero_1.jpg');">
+        <div class="img-header"></div>
+    </div>
+
+    <section class="main-content">
+        <div class="content-down px-1">
+            <div class="header">
+                <div class="logo__header__down">
+                    <img src="https://www.onthesnow.com/assets/resort/visitors-choice-en-US.svg" alt="">
+                </div>
+                <h2>Track and View</h2>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex justify-content-center" id="loading-gif">
+            <div class="spinner-border" style="width: 5rem; height: 5rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <div id="map" style="width:80%; height: 80vh"></div>
+
+
+        <div class="logo__header__down mt-5">
+            <img src="data:image/png;base64,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"
+                alt="">
+        </div>
+        <h2 class="mb-2" style="font-size: 40px;">History</h2>
+        <div id="list-history">
+            <div class="card" style="display: block; width: 100%;">
+                <div class="card-body p-4">
+                    <div class="d-flex">
+                        <h6 style="font-size: 24px" class="flex-grow-1">2022-10-27</h6>
+                        <h6 style="font-size: 24px" class="flex-date">09:00:00</h6>
+                    </div>
+                    <div class="d-flex flex-column text-center mt-3 mb-2">
+                        <h6 class="display-4 mb-0 font-weight-bold">Everest</h6>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1" style="font-size: 1rem;">
+                            <div style="font-size: 20px"><i class="fas fa-road"></i> <span class="ms-1"> 11 km</span>
+                            </div>
+                            <div style="font-size: 20px"><i class="fas fa-clock"></i> <span class="ms-1"> 02:00</span>
+                            </div>
+                            <div style="font-size: 20px"><i class="fas fa-heart-pulse"></i> <span class="ms-1"> 120
+                                    kcal</span></div>
+                        </div>
+                        <div><img src="https://www.animatedimages.org/data/media/284/animated-skiing-image-0012.gif"
+                                width="130px"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="display: block; width: 100%;">
+                <div class="card-body p-4">
+                    <div class="d-flex">
+                        <h6 style="font-size: 24px" class="flex-grow-1">2022-10-26</h6>
+                        <h6 style="font-size: 24px" class="flex-date">08:00:00</h6>
+                    </div>
+                    <div class="d-flex flex-column text-center mt-3 mb-2">
+                        <h6 class="display-4 mb-0 font-weight-bold">Da lat</h6>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1" style="font-size: 1rem;">
+                            <div style="font-size: 20px"><i class="fas fa-road"></i> <span class="ms-1"> 10.5 km</span>
+                            </div>
+                            <div style="font-size: 20px"><i class="fas fa-clock"></i> <span class="ms-1"> 01:45</span>
+                            </div>
+                            <div style="font-size: 20px"><i class="fas fa-heart-pulse"></i> <span class="ms-1"> 100
+                                    kcal</span></div>
+                        </div>
+                        <div><img src="https://www.animatedimages.org/data/media/284/animated-skiing-image-0074.gif"
+                                width="130px"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="display: block; width: 100%;">
+                <div class="card-body p-4">
+                    <div class="d-flex">
+                        <h6 style="font-size: 24px" class="flex-grow-1">2022-10-25</h6>
+                        <h6 style="font-size: 24px" class="flex-date">09:35:11</h6>
+                    </div>
+                    <div class="d-flex flex-column text-center mt-3 mb-2">
+                        <h6 class="display-4 mb-0 font-weight-bold">Everest</h6>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1" style="font-size: 1rem;">
+                            <div style="font-size: 20px"><i class="fas fa-road"></i> <span class="ms-1"> 20 km</span>
+                            </div>
+                            <div style="font-size: 20px"><i class="fas fa-clock"></i> <span class="ms-1"> 03:00</span>
+                            </div>
+                            <div style="font-size: 20px"><i class="fas fa-heart-pulse"></i> <span class="ms-1"> 190
+                                    kcal</span></div>
+                        </div>
+                        <div><img src="https://www.animatedimages.org/data/media/284/animated-skiing-image-0082.gif"
+                                width="130px"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="display: block; width: 100%;">
+                <div class="card-body p-4">
+                    <div class="d-flex">
+                        <h6 style="font-size: 24px" class="flex-grow-1">2022-10-24</h6>
+                        <h6 style="font-size: 24px" class="flex-date">12:11:10</h6>
+                    </div>
+                    <div class="d-flex flex-column text-center mt-3 mb-2">
+                        <h6 class="display-4 mb-0 font-weight-bold">Epic Pass</h6>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1" style="font-size: 1rem;">
+                            <div style="font-size: 20px"><i class="fas fa-road"></i> <span class="ms-1"> 4 km</span>
+                            </div>
+                            <div style="font-size: 20px"><i class="fas fa-clock"></i> <span class="ms-1"> 00:45</span>
+                            </div>
+                            <div style="font-size: 20px"><i class="fas fa-heart-pulse"></i> <span class="ms-1"> 130
+                                    kcal</span></div>
+                        </div>
+                        <div><img src="https://www.animatedimages.org/data/media/284/animated-skiing-image-0002.gif"
+                                width="130px"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="display: block; width: 100%;">
+                <div class="card-body p-4">
+                    <div class="d-flex">
+                        <h6 style="font-size: 24px" class="flex-grow-1">2022-10-24</h6>
+                        <h6 style="font-size: 24px" class="flex-date">10:10:23</h6>
+                    </div>
+                    <div class="d-flex flex-column text-center mt-3 mb-2">
+                        <h6 class="display-4 mb-0 font-weight-bold">Epic Pass</h6>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1" style="font-size: 1rem;">
+                            <div style="font-size: 20px"><i class="fas fa-road"></i> <span class="ms-1"> 4 km</span>
+                            </div>
+                            <div style="font-size: 20px"><i class="fas fa-clock"></i> <span class="ms-1"> 00:30</span>
+                            </div>
+                            <div style="font-size: 20px"><i class="fas fa-heart-pulse"></i> <span class="ms-1"> 40
+                                    kcal</span></div>
+                        </div>
+                        <div><img src="https://www.animatedimages.org/data/media/284/animated-skiing-image-0031.gif"
+                                width="130px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="img-footer"></div>
+    </section>
+
+
+    <footer class="bg-secondary text-center text-lg-start text-white">
+        <div class="container p-4">
+            <div class="row my-1">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
+                        style="width: 150px; height: 150px;">
+                        <img src="https://st2.depositphotos.com/3687485/9544/v/950/depositphotos_95445528-stock-illustration-ski-resort-logo-emblems-labels.jpg"
+                            height="100" alt="" loading="lazy" />
+                    </div>
+
+                    <p class="text-center">Join Skiing to get Ski magazine, access to exclusive content, thousands of
+                        training plans, and more.</p>
+
+                    <ul class="list-unstyled d-flex flex-row justify-content-center">
+                        <li>
+                            <a class="text-white px-2" href="#!">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-white px-2" href="#!">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-white ps-2" href="#!">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Training Plans</h5>
+
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Telluride</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Aspen Snowmass</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Deer Vally
+                                Resort</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Jackson Hole</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Lake Louise</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> More</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">About Us</h5>
+
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Job</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Tenders</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> General
+                                information</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> About the
+                                shelter</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Statistic data</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fa-solid fa-person-skiing"></i> Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Contact</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p><i class="fas fa-map-marker-alt pe-2"></i> Warsaw, 57 Street, Poland</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-phone pe-2"></i> + 01 234 567 89</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-envelope pe-2 mb-0"></i> contact@example.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- Toastr noti -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+<!-- Mouse effect -->
+<script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+<!-- Google polyline -->
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx0BLLb64KGVX2Einy0LTPKW_4wc2VHOk&callback=initMap&v=weekly"
+    defer></script>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+
+<script type="text/javascript" src="./js/index.js"></script>
+
+</html>
